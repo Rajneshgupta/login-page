@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            background-color: blue;
+            display: flex;
+            width: 100%;
+            position: fixed;
+            z-index: 10;
+        }
+        
+        .container ul {
+            display: flex;
+            margin: 20px 50px;
+            /* padding: 0px 40px; */
+        }
+        
+        .container ul li {
+            list-style: none;
+            margin: 0px 35px;
+        }
+        
+        .container ul li a {
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            text-transform: uppercase;
+        }
+        
+        .container ul li a:hover {
+            background-color: aqua;
+            color: red;
+        }
+        
+        .search {
+            border: 0px;
+            border-bottom: 1px solid red;
+            background: transparent;
+            font-weight: bold;
+            letter-spacing: 1px;
+            padding-right: 5px;
+        }
+        
+        .search:hover {
+            border: 1px solid orange;
+            border-right: none;
+        }
+        
+        .click {
+            letter-spacing: 1px;
+            padding: 7px 18px;
+            background-color: aqua;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .click:hover {
+            background-color: blueviolet;
+            color: aquamarine;
+        }
+        
+        .logo {
+            color: white;
+            font-weight: bold;
+            font-family: Arial;
+            font-size: 25px;
+            padding-top: 18px;
+            padding-left: 25px;
+        }
+        
+        .logo:hover {
+            color: pink;
+        }
+        
+        .container1 {
+            background-image: url(./loginimg/night.jpg);
+            background-size: cover;
+            width: 100%;
+            height: 658px;
+            overflow: hidden;
+        }
+        
+        .ex {
+            padding-top: 190px;
+            padding-left: 35px;
+            line-height: 45px;
+        }
+        
+        .ex h3 {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .ex h1 {
+            color: red;
+            font-size: 45px;
+            font-weight: bold;
+            top: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .ex h2 {
+            color: white;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+        
+        .ex p {
+            color: white;
+            line-height: 25px;
+            font-size: 18px;
+            font-weight: bold;
+            top: 10px;
+        }
+        
+        .btn1 {
+            border: 0px solid;
+            margin-top: 17px;
+            padding: 13px 55px;
+            background-color: orange;
+            color: pink;
+            font-weight: bold;
+            font-size: 15px;
+            border-radius: 30px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.7s ease;
+        }
+        
+        .btn1:hover {
+            background-color: blueviolet;
+            color: orangered;
+        }
+        
+        .form {
+            border: 2px solid black;
+            margin-top: -285px;
+            margin-left: 800px;
+            width: 350px;
+            height: 400px;
+            background-color: black;
+            position: absolute;
+            border-radius: 10px;
+        }
+        
+        .form h1 {
+            border: 1px solid black;
+            background-color: white;
+            color: red;
+            margin-top: 30px;
+            margin-left: 8px;
+            margin-right: 8px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 35px;
+            font-weight: bold;
+        }
+        
+        .form input {
+            background: transparent;
+            width: 240px;
+            height: 20px;
+            margin-left: 50px;
+            border-bottom: 1px solid yellow;
+            color: white;
+            border-left: none;
+            border-right: none;
+            border-top: none;
+            color: white;
+            font-size: 16px;
+            letter-spacing: 1.2px;
+            margin-top: 10px;
+            font-family: sans-serif;
+        }
+        
+        .form input:focus {
+            outline: none;
+        }
+        
+         ::placeholder {
+            color: white;
+            font-family: Arial;
+        }
+        
+        .btn2 {
+            height: 35px;
+            width: 240px;
+            margin-left: 50px;
+            margin-top: 10px;
+            border-radius: 10px;
+            letter-spacing: 1px;
+            color: orangered;
+            font-size: 16px;
+            background-color: blue;
+            border: none;
+            cursor: pointer;
+            transition: 0.8s ease;
+        }
+        
+        .btn2:hover {
+            background-color: orange;
+            color: white;
+        }
+        
+        .btn a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+        
+        .link {
+            text-align: center;
+            justify-content: center;
+            margin-top: 7px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 25px;
+            color: white;
+        }
+        
+        .p.a {
+            text-align: center;
+            color: brown;
+        }
+        
+        .liw {
+            text-align: center;
+            margin-top: 7px;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .container4 {
+            width: 1364px;
+            height: 500px;
+            background-color: greenyellow;
+        }
+        
+        .ex6 {
+            height: 80px;
+            width: 1364px;
+            background-color: aqua;
+        }
+        
+        .ex6 p {
+            text-align: center;
+            padding-top: 28px;
+            font-size: 30px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+        
+        .container5 {
+            height: 577px;
+            width: 1364px;
+            background-color: yellowgreen;
+            display: flex;
+            padding-top: 90px;
+            padding-left: 120px;
+            justify-content: center;
+        }
+        
+        .text h1 {
+            color: blue;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bolder;
+            font-size: 45px;
+            padding-right: 40px;
+            padding-left: 90px;
+        }
+        
+        .text p {
+            font-weight: bold;
+            font-size: 20px;
+            padding-right: 170px;
+            color: white;
+            text-align: center;
+        }
+        
+        .text1 h1 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            color: brown;
+            font-size: 45px;
+            padding-left: 90px;
+        }
+        
+        .text1 p {
+            font-weight: bold;
+            font-size: 20px;
+            padding-right: 110px;
+            color: white;
+            text-align: center;
+        }
+        
+        .text2 h1 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 40px;
+            color: orange;
+            padding-left: 35px;
+        }
+        
+        .text2 p {
+            font-weight: bold;
+            font-size: 20px;
+            color: white;
+            padding-right: 160px;
+            text-align: center;
+            padding-top: 20px;
+        }
+        
+        .container6 {
+            width: 1364px;
+            height: 587px;
+            background-image: url(./loginimg/pen.jpg);
+            background-size: cover;
+        }
+        
+        .ex10 {
+            padding-top: 125px;
+            margin-left: 25px;
+        }
+        
+        .ex10 h2 {
+            font-family: Arial;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 30px;
+            color: blueviolet;
+        }
+        
+        .ex10 p {
+            margin-top: 13px;
+            line-height: 25px;
+            font-weight: bold;
+            font-size: 17px;
+        }
+        
+        .ex10 h1 {
+            color: blue;
+            font-weight: bolder;
+            font-size: 35px;
+            font-family: Arial;
+        }
+        
+        .ex10 h3 {
+            font-family: Arial;
+            font-weight: bold;
+            color: gold;
+        }
+        
+        .ex10 h4 {
+            padding-left: 174px;
+            color: brown;
+            position: absolute;
+            top: 1550px;
+            font-size: 19px;
+            font-family: Arial;
+        }
+        
+        .ex10 h5 {
+            font-family: Arial;
+            font-size: 20px;
+            font-weight: bold;
+            color: green;
+        }
+        
+        .ex10 h6 {
+            padding-left: 174px;
+            color: yellowgreen;
+            position: absolute;
+            top: 1590px;
+            font-size: 20px;
+            font-family: Arial;
+            font-weight: bold;
+        }
+        
+        .box {
+            height: 50px;
+            width: 100px;
+            background-color: yellow;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div style="display: inline-block;" class="logo">ProRoz</div>
+        <ul>
+            <li><a href="graphic.html">HOME</a></li>
+            <li><a href="hyper.html">ABOUT</a></li>
+            <li><a href="#cont6">SERVICE</a></li>
+            <li><a href="box.html">DESGIN</a></li>
+            <li><a href="www.html">CONTACT</a></li>
+            <li style="display: flex;margin-left: 190px;"><input class="search" type="search" placeholder="Type of Search"><button class="click">search</button></li>
+        </ul>
+        <!-- <div style="display: inline-block;"></div> -->
+    </div>
+    <div class="container1">
+        <div class="ex">
+            <h3>Web Design &</h3>
+            <h1>Development</h1>
+            <h2>Course</h2>
+            <p>We Design is a application of the desgin stream.<br> They also use HTML.CSS.WYSIWYG editing,mark up,validators<br> etc. to create design elements.</p>
+            <button class="btn1">JOIN US</button>
+        </div>
+        <div class="form">
+            <h1>Login Here</h1>
+            <br><br>
+            <input type="email" name="email" placeholder="Enter Email Here">
+            <br><br>
+            <input type="password" name="" placeholder="Enter password here">
+            <br><br>
+            <button class="btn2"><a here="#">Login</a></button>
+
+            <p class="link">Don't have an account<br>
+                <a href="#">Sign up</a> here</a>
+            </p>
+            <p class="liw">Log in with</p>
+        </div>
+    </div>
+    <div class="container4">
+        <div class="ex6">
+            <p> Web Design Requrement Lanuage</p>
+        </div>
+        <div class="container5">
+            <div class="text">
+                <h1>HTML</h1><br>
+                <P>The Hype TextM arkup Language <br>or html is the standard markup <br>language for documents designed<br> to be displayed in a web browers.<br>it can be assisted by<br> technology sch as cascading<br> style sheet and scripting language
+                </P>
+            </div>
+            <div class="text1">
+                <h1>CSS</h1><br>
+                <p>Cascading Style Sheet is a style<br> sheet language used for describing<br>the presentation of document<br> written in a markup language such<br>such as HTML.CSS is a cornerstone<br>technology of the World Wide Web<br> alongside HTML and
+                    javascript
+                </p>
+            </div>
+            <div class="text2">
+                <h1>JAVASCRIPT</h1>
+                <p>JavaScript often abberviated JS,<br>Is a programming language that is<br>is one of the core technologies of<br> the World Wide Wed, alongside HTML<br>CSS. as of 2022, 98% of website <br>use JavaScript on The client Side<br> for web page
+                    behavior, often<br>incorporating third-party libraries</p>
+            </div>
+        </div>
+    </div>
+    <div id="cont6" class="container6">
+        <div class="ex10">
+            <h2>Who we are</h2>
+            <p>we are a group of experts with over 20 combined years of<br> expeience who truly value technology and the impact it has<br> on our customers. Through the constant sharing of ideas,<br> Information, and feedback, our team works together to
+                <br>provide the best digital solution for customers.</p>
+            <br><br>
+            <h1>Our believes</h1>
+            <br>
+            <h3> We are innovative</h3>
+            <h4>We are collaborative</h4>
+            <br>
+            <h5> We are flexible</h5>
+            <h6> We are supportive</h6>
+        </div>
+        <div class="box">
+        </div>
+        <div class="ex11">
+        </div>
+    </div>
+</body>
+
+</html>
